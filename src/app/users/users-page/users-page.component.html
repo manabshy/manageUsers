@@ -1,7 +1,16 @@
 
+
+<app-users-detail
+  [user]="currentUser$|async"
+  (save)="onSave($event)"
+  (cancel)="onCancel()"
+>
+</app-users-detail>
+
 <app-users-list
 [users]="users$|async"
 (select)="onSelect($event)"
 (delete)="onDelete($event)"
+(deleteAll)="onDeleteAll()"
 >
 </app-users-list>

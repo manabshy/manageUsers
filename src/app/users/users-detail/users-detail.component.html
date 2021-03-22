@@ -1,1 +1,17 @@
-<p>users-detail works!</p>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      <h1>
+        <span *ngIf="originalUser?.id; else prompt"
+          >Editing {{ originalUser.name }}</span
+        >
+        <ng-template #prompt>Add New User</ng-template>
+      </h1>
+    </mat-card-title>
+  </mat-card-header>
+  <form [formGroup]="userForm" #f="ngForm" (submit)="onSubmit(f.value)">
+    <input matInput placeholder="Name" formControlName="name" type="text" />
+    <button type="submit" mat-button>Save</button>
+    <button type="button" mat-button (click)="cancel.emit()">Cancel</button>
+  </form>
+</mat-card>

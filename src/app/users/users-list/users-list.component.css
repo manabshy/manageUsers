@@ -1,3 +1,4 @@
+
 mat-list-item:not(:first-of-type) {
   border-top: 1px solid #efefef;
 }
@@ -9,6 +10,14 @@ mat-list-item:not(:first-of-type) {
 .mat-icon-button {
   width: 100px;
   border-radius: 0%;
-  background-color: ghostwhite;
+  background-color: lightgray;
   margin-left: 15px;
+}
+
+mat-card {
+  padding: 0;
+}
+
+.user-grid {
+  box-shadow: 0 0px 2px 0px #000000, 0 0 0 0px #000000;
 }

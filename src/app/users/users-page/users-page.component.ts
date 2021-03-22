@@ -28,66 +28,69 @@ export class UsersPageComponent implements OnInit {
 
     this.store.dispatch(UsersPageActions.enter());
     this.getUsers();
-    this.removeSelectedBook();
+    this.removeSelectedUser();
   }
 
   getUsers() {
     this.usersService.all().subscribe(users => {
       this.store.dispatch(UsersApiActions.usersLoaded({users: users}));
-      this.updateTotals(users);
     });
   }
 
-  updateTotals(users: UserModel[]) {
-    // this.total = calculateUserGrossEarnings(users);
-  }
 
   onSelect(user: UserModel) {
     this.store.dispatch(UsersPageActions.selectUser({userId: user.id}));
   }
 
   onCancel() {
-    this.removeSelectedBook();
+    this.removeSelectedUser();
   }
 
-  removeSelectedBook() {
+  removeSelectedUser() {
     this.store.dispatch(UsersPageActions.clearSelectedUser());
   }
 
   onSave(user: UserRequiredProps | UserModel) {
     if ("id" in user) {
-      this.updateBook(user);
+      this.updateUser(user);
     } else {
-      this.saveBook(user);
+      this.saveUser(user);
     }
   }
 
-  saveBook(userProps: UserRequiredProps) {
+  saveUser(userProps: UserRequiredProps) {
     this.store.dispatch(UsersPageActions.createUser({user: userProps}));
+    // TODO This will be moved to an NgRx effect
     this.usersService.create(userProps).subscribe((user) => {
       this.store.dispatch(UsersApiActions.userCreated({user: user}));
 
       this.getUsers();
-      this.removeSelectedBook();
+      this.removeSelectedUser();
     });
   }
 
-  updateBook(user: UserModel) {
+  updateUser(user: UserModel) {
     this.store.dispatch(UsersPageActions.updateUser({userId: user.id, changes: user}));
+    // TODO This will be moved to an NgRx effect
     this.usersService.update(user.id, user).subscribe((user) => {
       this.store.dispatch(UsersApiActions.userUpdated({user: user}));
       this.getUsers();
-      this.removeSelectedBook();
+      this.removeSelectedUser();
     });
   }
 
   onDelete(user: UserModel) {
     this.store.dispatch(UsersPageActions.deleteUser({userId: user.id}));
+    // TODO This will be moved to an NgRx effect
     this.usersService.delete(user.id).subscribe(() => {
       this.store.dispatch(UsersApiActions.userDeleted({userId: user.id}));
 
       this.getUsers();
-      this.removeSelectedBook();
+      this.removeSelectedUser();
     });
+  }
+  onDeleteAll() {
+    // TODO : Not Implemented
+    // Dispatch Event to Delete All users
   }
 }

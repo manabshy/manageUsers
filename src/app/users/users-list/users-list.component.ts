@@ -12,6 +12,7 @@ export class UsersListComponent implements OnInit {
   @Input() readonly = false;
   @Output() select = new EventEmitter();
   @Output() delete = new EventEmitter();
+  @Output() deleteAll = new EventEmitter();
   constructor() { }
 
   ngOnInit(): void {
