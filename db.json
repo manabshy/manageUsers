@@ -2,27 +2,51 @@
     "users": [
       {
         "id": "ca66d740-e41d-4b70-aea1-a8a20759a647",
-        "name": "The Lion, the Witch and the Wardrobe",
+        "name": "Res Berry",
         "earnings": "85000000",
-        "description": ""
+        "description": "Res Berry"
       },
       {
         "id": "408c6851-7b7a-439e-b6db-9fb65ea61071",
-        "name": "The Adventures of Pinocchio",
+        "name": "Harry James",
         "earnings": "85000000",
-        "description": ""
+        "description": "Harry James"
       },
       {
         "id": "3fe92243-8444-4ee4-bb39-b5460b8919f1",
-        "name": "The Hobbit",
+        "name": "Bill Job",
         "earnings": "100000000",
         "description": null
       },
       {
         "id": "29ee8e09-5385-4356-94c0-9bbfdb6d4b38",
-        "name": "XX",
+        "name": "Sam Tin Wong",
         "earnings": "5000",
-        "description": "MJ BISHT"
+        "description": null
+      },
+      {
+        "id": "ca66d740-e41d-4b70-aea1-a8a20759a645",
+        "name": "Vanessa Berry",
+        "earnings": "85000000",
+        "description": "Res Berry"
+      },
+      {
+        "id": "408c6851-7b7a-439e-b6db-9fb65ea61073",
+        "name": "Harry Holland",
+        "earnings": "85000000",
+        "description": "Harry James"
+      },
+      {
+        "id": "3fe92243-8444-4ee4-bb39-b5460b8919f5",
+        "name": "Bill Dawson",
+        "earnings": "100000000",
+        "description": null
+      },
+      {
+        "id": "29ee8e09-5385-4356-94c0-9bbfdb6d4b40",
+        "name": "Mike Whitlock",
+        "earnings": "5000",
+        "description": null
       }
     ]
   }

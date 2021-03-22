@@ -1,0 +1,14 @@
+mat-list-item:not(:first-of-type) {
+  border-top: 1px solid #efefef;
+}
+
+.symbol {
+  color: #777;
+}
+
+.mat-icon-button {
+  width: 100px;
+  border-radius: 0%;
+  background-color: ghostwhite;
+  margin-left: 15px;
+}
